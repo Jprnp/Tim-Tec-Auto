@@ -1,0 +1,25 @@
+{
+    "name": "AutoTimTec",
+    "version": "0.2",
+    "description": "Automatize a conclusão de cursos na TimTec. Clique no ícone enquanto estiver em uma aula e farei o resto!",
+    "manifest_version": 2,
+    "background": {
+      "scripts": ["js/background.js"]
+    },
+    "permissions": [
+        "contextMenus",
+        "webNavigation",
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "content_scripts": [
+        {
+          "matches": ["*://*.cursos.timtec.com.br/course/*/lesson/*"],
+          "js": ["js/timTecAuto.js"]
+        }
+      ],
+    "browser_action": {
+
+    }
+}
